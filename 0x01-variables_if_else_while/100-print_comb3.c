@@ -26,8 +26,8 @@ for (n = 48; n <= 56; n++)
 			}
 		}
 	}
+}
 
 putchar('\n');
 return (0);
-
 }
