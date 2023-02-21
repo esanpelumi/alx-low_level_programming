@@ -1,6 +1,4 @@
-vi 100-times_table.c
-
-include "main.h"
+#include "main.h"
 
 /**
  * print_times_table - Prints the n times table
