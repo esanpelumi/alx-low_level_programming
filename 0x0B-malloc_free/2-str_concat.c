@@ -1,52 +1,43 @@
-#include "main.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-/**
- * *str_concat - a function that concatenates two strings.
- * @s1: receives the first string
- * @s2: recieves the secondstring
- * Return: return a cat string
- */
+
 char *str_concat(char *s1, char *s2)
 {
-	char *ptr;
-	int i;
-
-	int size_s1 = 0;
-	int size_s2 = 0;
-	int j = 0;
-
-	if (s1 == NULL)
-	{
+	if (!s1)
 		s1 = "";
-	}
-	if (s2 == NULL)
-	{
-		s2 = "";
-	}
 
-	while (s1[size_s1] != '\0')
-	{
-		size_s1++;
-	}
-	while (s2[size_s2] != '\0')
-	{
-		size_s2++;
-	}
-	ptr = malloc((sizeof(char) * size_s1) + (sizeof(char) * size_s2 + 1));
-	if (ptr == NULL)
-	{
+	if (!s2)
+		s2 = "";
+
+	int len1 = strlen(s1);
+
+	int len2 = strlen(s2);
+
+	char *result = malloc(len1 + len2 + 1);
+
+	if (!result)
 		return (NULL);
-	}
-	for (i = 0; s1[i] != '\0'; i++)
+
+	strcpy(result, s1);
+	strcat(result, s2);
+	return (result);
+}
+
+int main(void)
+{
+	char *s1 = "Hello, ";
+	char *s2 = "world!";
+	char *s3 = str_concat(s1, s2);
+
+	if (s3)
 	{
-		ptr[i] = s1[i];
+		printf("%s\n", s3);
+		free(s3);
 	}
-	while (s2)
+	else
 	{
-		ptr[i] = s2[j];
-		j++, i++;
+		printf("Failed to concatenate strings.\n");
 	}
-	return (ptr);
+	return (0);
 }
