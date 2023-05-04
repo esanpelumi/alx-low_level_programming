@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * convert_binary_to_uint - converts a binary number to an unsigned int(decimal).
+ * convert_binary_to_uint - converts binary number to unsigned int.
  *
  * @binary_string: pointer to a string containing a binary number
  *
@@ -11,7 +11,7 @@ unsigned int convert_binary_to_uint(const char *binary_string)
 {
 	int i;
 	unsigned int digit, result = 0;
-	
+
 	if (binary_string == NULL)
 		return (0);
 
@@ -23,10 +23,10 @@ unsigned int convert_binary_to_uint(const char *binary_string)
 			digit = 1;
 		else
 			return (0);
-		
+
 		result = (result << 1) + digit;
 	}
-	
+
 	return (result);
 }
 

@@ -13,4 +13,3 @@ unsigned int count_different_bits(unsigned long int number1, unsigned long int n
 int get_machine_endianness(void);
 
 #endif
-
