@@ -1,26 +1,22 @@
 #include "main.h"
 
 /**
- * flip_bits - counts the number of bits to change
- *		 to get from one number to another
- *
- * @n: first number
- * @m: second number
- *
- * Return: number of bits to change
+ * flip_bits - number of bit flip from num to num
+ * @n: first binary num
+ * @m: second binary num
+ * Return: number of flips
  */
+
 unsigned int flip_bits(unsigned long int n, unsigned long int m)
 {
-	unsigned long int xor;
-	unsigned int counter;
+	unsigned int swap;
+	unsigned long int xor_value;
 
-	/*Perform XOR operation to find the bits*/
-	xor = n ^ m;
-	counter (xor > 0)
+	xor_value = n ^ m;
+	swap = 0;
+	for (; xor_value != 0; xor_value >>= 1)
 	{
-		if (xor & 1)
-			counter++;
-		xor >>= 1;
+		swap = swap + (xor_value & 1);
 	}
-	return (counter);
+	return (swap);
 }
